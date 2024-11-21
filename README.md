@@ -1,126 +1,96 @@
-# Jira Lite: Project Management System
+# Jira Lite - Internship Management Application
 
-## Overview
+## Project Overview
 
-Jira Lite is a lightweight project management system designed for small teams and startups. It offers essential features like task management, role-based access control, and progress tracking, without the complexity of larger tools like Jira. The app emphasizes simplicity, reliability, and ease of use to streamline project workflows.
+Jira Lite is a lightweight project management and task tracking application designed for internship programs. The application provides role-based dashboards for Project Managers, Team Leads, and Team Members.
 
 ## Features
 
-### Role-Based Access Control (RBAC)
+### Project Manager Dashboard
+- Create new projects
+- Assign Team Leads to projects
+- View project overview
 
-- **Project Manager**:
-  - Create projects and manage timelines.
-  - Assign team leads.
-  - Oversee overall project progress.
+### Team Lead Dashboard
+- Create tasks for assigned projects
+- Assign tasks to team members
+- Track task progress
 
-- **Team Lead**:
-  - Assign tasks to team members.
-  - Track task progress and update status.
+### Team Member Dashboard
+- View assigned tasks
+- Update task status
 
-- **Team Member**:
-  - Update task statuses.
-  - Log work hours.
+## Technology Stack
 
-### Task Management
+- React
+- React Hooks
+- Context API for state management
+- Tailwind CSS for styling
+- Lucide React for icons
 
-- Create, assign, edit, and delete tasks.
-- Update task statuses: Pending, In Progress, Completed.
-- View tasks sorted by deadlines or priority.
+## Prerequisites
 
-### Progress Tracking
-
-- Visualize team performance using a task progress bar.
-- Filter tasks by assignee, status, or due date.
-
-### Responsive Design
-
-- Fully responsive UI built with React and Tailwind CSS for a seamless experience across devices.
-
-## Tech Stack
-
-- **Frontend**: React, Tailwind CSS
-- **State Management**: React Context API
-- **Mock Backend**: JSON Server
-- **Routing**: React Router
+- Node.js (v17 or later)
+- npm or yarn
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/jira-lite.git
-   cd jira-lite
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-
-4. Run a mock backend using JSON Server:
-   ```bash
-   npm install -g json-server
-   json-server --watch db.json --port 5000
-   ```
-
-## Folder Structure
-
-```
-jira-lite/
-├── public/
-├── src/
-│   ├── components/      # Reusable React components (buttons, modals, etc.)
-│   ├── pages/           # Pages (Dashboard, Project View, User Management, etc.)
-│   ├── context/         # Context for global state management
-│   ├── services/        # API calls
-│   ├── assets/          # Images, icons, and static assets
-│   └── App.js           # Main app entry point
-├── db.json              # Mock backend data
-└── package.json
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/jira-lite.git
+cd jira-lite/forward
 ```
 
-## Key Screens
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-### 1. Dashboard
-- Overview of all projects and their progress.
-- Quick stats for tasks: Pending, In Progress, Completed.
+3. Install additional dependencies
+```bash
+npm install tailwindcss lucide-react
+# or
+yarn add tailwindcss lucide-react
+```
 
-### 2. Project Management
-- List of all projects with options to create, edit, or delete.
-- Assign team leads and manage deadlines.
+## Available Users
 
-### 3. Task Management
-- View and manage tasks for a specific project.
-- Update task statuses or assign them to team members.
+### Login Credentials
+- Project Manager
+    - Username: `pm_pm`
+    - Password: `pmpass`
 
-### 4. User Management
-- Add, edit, and delete users.
-- Assign roles (Project Manager, Team Lead, Team Member).
+- Team Lead
+    - Username: `tl_tl`
+    - Password: `tlpass`
 
-## API Endpoints (Mocked)
+- Team Member
+    - Username: `tm_tm`
+    - Password: `tmpass`
 
-### Users
-- `GET /users` – Fetch all users.
-- `POST /users` – Add a new user.
-- `PUT /users/:id` – Edit user details.
-- `DELETE /users/:id` – Remove a user.
+## Running the Application
 
-### Projects
-- `GET /projects` – Fetch all projects.
-- `POST /projects` – Add a new project.
-- `PUT /projects/:id` – Edit project details.
-- `DELETE /projects/:id` – Remove a project.
+```bash
+npm start
+# or
+yarn start
+```
 
-### Tasks
-- `GET /tasks` – Fetch all tasks.
-- `POST /tasks` – Add a new task.
-- `PUT /tasks/:id` – Edit task details.
-- `DELETE /tasks/:id` – Remove a task.
+## Project Structure
+
+- `App.js`: Main application component
+- `authContext.js`: Authentication context
+- `DataContext.js`: Data management context
+- `LoginPage.js`: User authentication page
+- `DashboardLayout.js`: Common layout for dashboards
+- `ProjectManagerDashboard.js`: Dashboard for Project Managers
+- `TeamLeadDashboard.js`: Dashboard for Team Leads
+- `TeamMemberDashboard.js`: Dashboard for Team Members
+- `data.js`: Mock data for users, projects, and tasks
+
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE] file for details.
+Distributed under the MIT License. See `LICENSE` for more information.
